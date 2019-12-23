@@ -198,6 +198,19 @@ console.log(myTamagochi);
 
 (function() {
   setInterval(function () {
+    let keys = Object.keys(myTamagochi);
+    myTamagochi[keys[keys.length * Math.random() << 0]] += randomizeStat(100, 50);
+    tamagochiHP.innerHTML = myTamagochi.health;
+    tamagochiHappiness.innerHTML = myTamagochi.happiness;
+    tamagochiFood.innerHTML = myTamagochi.food;
+    tamagochiClean.innerHTML = myTamagochi.tamagochiClean;
+    tamagochiSoc.innerHTML = myTamagochi.soc;
+    tamagochiMoney.innerHTML = myTamagochi.money;
+  }, 60000);
+})();
+
+(function() {
+  setInterval(function () {
     if(difficult === 0 || difficult === 1) {
       myTamagochi.decreaseStats();
     } else {
